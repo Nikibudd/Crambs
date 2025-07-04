@@ -14,12 +14,18 @@ class KeyEventHandler: EventHandler<KeyEvent>{
         keyCodes.forEach { key ->
             keys[key] = false
         }
+        println(keys.keys)
+    }
+
+    constructor() {
+
     }
 
     override fun handle(event: KeyEvent?) {
         event?.let {
             when (event.eventType) {
                 KeyEvent.KEY_PRESSED -> {
+                    println(event.code)
                     if (keys.keys.contains(event.code)) {
                         keys[event.code] = true
                     }
@@ -35,5 +41,9 @@ class KeyEventHandler: EventHandler<KeyEvent>{
 
     fun isPressed(keyCode: KeyCode): Boolean {
         return keys[keyCode] ?: false
+    }
+
+    fun addKey(keyCode: KeyCode) {
+        keys[keyCode] = false
     }
 }
