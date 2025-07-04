@@ -22,4 +22,12 @@ class Navigator {
         stage.show()
     }
 
+    fun getStageWidth(): Double {
+        return stage.width
+    }
+
+    fun getStageHeight(): Double {
+        return stage.height
+    }
+
 }
