@@ -89,4 +89,12 @@ abstract class GameScene(navigator: Navigator, name: String): Scene(StackPane())
     fun GraphicsContext.clear() {
         clearRect(0.0, 0.0, canvas.width, canvas.height)
     }
+
+    fun GraphicsContext.getCanvasWidth(): Double {
+        return canvas.width
+    }
+
+    fun GraphicsContext.getCanvasHeight(): Double {
+        return canvas.height
+    }
 }
